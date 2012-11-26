@@ -43,7 +43,7 @@ class Passenger:
             self.checks_logger.error("Failed: %s" % PASSENGER_STATUS_CMD)
             stats['running'] = False
             return stats
-        else
+        else:
             stats['running'] = True
 
         # max application instances
