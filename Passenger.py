@@ -41,7 +41,10 @@ class Passenger:
         status, out = commands.getstatusoutput(PASSENGER_STATUS_CMD)
         if status != 0:
             self.checks_logger.error("Failed: %s" % PASSENGER_STATUS_CMD)
+            stats['running'] = False
             return stats
+        else
+            stats['running'] = True
 
         # max application instances
         match = re.search('max += (\d+)', out)
